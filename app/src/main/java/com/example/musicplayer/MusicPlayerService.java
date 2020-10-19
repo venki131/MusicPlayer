@@ -47,7 +47,7 @@ public class MusicPlayerService extends Service implements
             stopSelf();
         }
 
-        if (requestAudioFocus() == false)
+        if (!requestAudioFocus())
             stopSelf();
 
         if (!TextUtils.isEmpty(mediaFile))
