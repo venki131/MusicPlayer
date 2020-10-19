@@ -42,7 +42,7 @@ public class MusicPlayerService extends Service implements
     public int onStartCommand(Intent intent, int flags, int startId) {
         //audio file is passed to the service
         try {
-            mediaFile = intent.getExtras().getString("media");
+            mediaFile = Objects.requireNonNull(intent.getExtras()).getString("media");
         } catch (NullPointerException e) {
             stopSelf();
         }
